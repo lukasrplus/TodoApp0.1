@@ -1,0 +1,28 @@
+<h1>MY TASKS FOR TODAY</h1>
+
+
+<table border="1">
+
+<tr>
+<th>TASK</th>
+<th>OWNER</th>
+<th>DONE</th>
+<th>IMPORTANT</th>
+</tr>
+
+
+<%  @tasks.each do |task| %>
+<tr>
+<td><%= task.content %></td>
+<td><%= task.owner %></td>
+<td><%= task.done %></td>
+<td><%= task.important %></td>
+</tr>
+
+<% end %>
+
+</table>
+
+
+
+
