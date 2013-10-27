@@ -9,11 +9,11 @@
   <br>
 
   <label for = "done">DONE</label>
-  <input id = "done" type = "checkbox" name = "done" checked = <%= @taskdone %> >
+  <input id = "done" type = "checkbox" name = "done" value = <%= @task.done %> checked = "<%= @taskdone %>" >
   <br>
 
   <label for = "important">IMPORTANT</label>
-  <input id = "important" type = "checkbox" name = "important" checked= <%= @taskimportant %> >
+  <input id = "important" type = "checkbox" name = "important" value = <%= @task.important %> checked= "<%= @taskimportant %>" >
   <br>
 
   <input type= "submit">

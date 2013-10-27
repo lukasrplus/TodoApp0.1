@@ -27,12 +27,12 @@ end
 def edit
 @task = Task.find_by(id: params[:id])
 
-  if @task.done
-    @taskdone = "checked"
+  if @task.done == "true"
+    @taskdone = "on"
   end
 
-  if @task.important
-    @taskimportant = "checked"
+  if @task.important == "true"
+    @taskimportant = "on"
   end
 
 end

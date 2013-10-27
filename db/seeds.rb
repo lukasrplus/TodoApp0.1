@@ -9,17 +9,17 @@
 x = Task.new
 x.content = "Buy a jacket."
 x.owner = "Lukas"
-x.important = false
+x.important = "false"
 x.save
 
 x = Task.new
 x.content = "Call Paul"
 x.owner = "Lukas"
-x.important = false
+x.important = "false"
 x.save
 
 x = Task.new
 x.content = "Practise Rails"
 x.owner = "Lukas"
-x.important = true
+x.important = "true"
 x.save

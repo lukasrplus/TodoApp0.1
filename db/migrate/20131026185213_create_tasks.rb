@@ -3,7 +3,7 @@ class CreateTasks < ActiveRecord::Migration
     create_table :tasks do |t|
       t.string :content
       t.string :owner
-      t.boolean :done, default: false
+      t.boolean :done
       t.boolean :important
     end
   end

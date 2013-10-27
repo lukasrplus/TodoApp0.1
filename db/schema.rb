@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20131026185213) do
   create_table "tasks", force: true do |t|
     t.string  "content"
     t.string  "owner"
-    t.boolean "done",      default: false
+    t.boolean "done"
     t.boolean "important"
   end
 
