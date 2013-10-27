@@ -1,0 +1,19 @@
+<form action="/update/<%= @task.id %>">
+
+  <label for = "content">CONTENT</label>
+  <input id = "content" type = "text_area" name = "content" value = "<%= @task.content %>" >
+  <br>
+
+  <label for = "owner">OWNER</label>
+  <input id = "owner" type = "text_area" name = "owner" value = "<%= @task.owner %>" >
+  <br>
+
+  <label for = "done">DONE</label>
+  <input id = "done" type = "checkbox" name = "done" checked = <%= @taskdone %> >
+  <br>
+
+  <label for = "important">IMPORTANT</label>
+  <input id = "important" type = "checkbox" name = "important" checked= <%= @taskimportant %> >
+  <br>
+
+  <input type= "submit">

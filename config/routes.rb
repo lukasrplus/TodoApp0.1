@@ -2,6 +2,14 @@ TodoApp01::Application.routes.draw do
 
 root 'tasks#index'
 
+get'/new' => 'tasks#new', :as => "new"
+get'createtask' => 'tasks#createtask'
+
+get'delete/:id' => 'tasks#destroy', :as => "destroy"
+
+get'edit/:id' => 'tasks#edit', :as => "edit"
+get'update/:id' => 'tasks#update', :as => "update"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
