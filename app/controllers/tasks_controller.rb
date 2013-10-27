@@ -34,6 +34,9 @@ def destroy
   redirect_to root_url
 end
 
+def archive
+end
+
 def edit
 @task = Task.find_by(id: params[:id])
 end

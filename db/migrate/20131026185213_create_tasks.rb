@@ -4,6 +4,7 @@ class CreateTasks < ActiveRecord::Migration
       t.string :content
       t.string :owner
       t.boolean :important
+      t.boolean :done
     end
   end
 end

@@ -6,6 +6,7 @@ get'/new' => 'tasks#new', :as => "new"
 get'createtask' => 'tasks#createtask'
 
 get'delete/:id' => 'tasks#destroy', :as => "destroy"
+get'archive' => 'tasks#archive', :as => "archive"
 
 get'edit/:id' => 'tasks#edit', :as => "edit"
 get'update/:id' => 'tasks#update', :as => "update"

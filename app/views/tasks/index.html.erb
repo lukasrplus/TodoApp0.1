@@ -11,6 +11,7 @@
 <table border="1">
 
 <tr>
+<th>DONE?</th>
 <th>TASK</th>
 <th>OWNER</th>
 <th>IMPORTANT</th>
@@ -21,6 +22,7 @@
 
 <%  @tasks.each do |task| %>
 <tr>
+<td><%= link_to "done", archive_url(task.id) %></td>
 <td><%= task.content %></td>
 <td><%= task.owner %></td>
 <td><%= task.important %></td>
