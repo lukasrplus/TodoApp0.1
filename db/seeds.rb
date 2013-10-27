@@ -17,6 +17,26 @@ x.owner = "Lukas"
 x.save
 
 x = Task.new
-x.content = "Practise Rails"
+x.content = "Call Pete"
 x.owner = "Lukas"
+x.save
+
+x = Task.new
+x.content = "Buy Milk"
+x.owner = "Marlene"
+x.save
+
+x = Task.new
+x.content = "Talk to Neil"
+x.owner = "Mike"
+x.save
+
+x = Task.new
+x.content = "Teach Lukas"
+x.owner = "Garrett"
+x.save
+
+x = Task.new
+x.content = "Upload to Github"
+x.owner = "Chance"
 x.save
