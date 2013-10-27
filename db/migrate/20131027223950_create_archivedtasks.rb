@@ -1,6 +1,6 @@
-class CreateTasks < ActiveRecord::Migration
+class CreateArchivedtasks < ActiveRecord::Migration
   def change
-    create_table :tasks do |t|
+    create_table :archivedtasks do |t|
       t.boolean :done
       t.string :content
       t.string :owner

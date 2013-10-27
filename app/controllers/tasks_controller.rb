@@ -34,7 +34,19 @@ def destroy
   redirect_to root_url
 end
 
+def archiveindex
+  @archivedtasks = Archivedtask.all
+end
+
 def archive
+  task = Task.find_by(id: params[:id])
+  a = Archivedtask.new
+  a.content = task.content
+  a.owner = task.owner
+  a.important = task.important
+  a.save
+  task.destroy
+  redirect_to root_url
 end
 
 def edit

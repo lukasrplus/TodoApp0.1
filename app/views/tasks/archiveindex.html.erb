@@ -1,0 +1,29 @@
+<h1>MY TASK ARCHIVE</h1>
+
+<h3><%= link_to "Go back home", root_url %></h3>
+
+<h4>Number of open tasks: <%= @archivedtasks.count %></h4>
+
+<table border="1">
+
+<tr>
+<th>DONE?</th>
+<th>TASK</th>
+<th>OWNER</th>
+<th>IMPORTANT</th>
+</tr>
+
+
+<%  @archivedtasks.each do |a| %>
+<tr>
+<td>DONE!</td>
+<td><%= a.content %></td>
+<td><%= a.owner %></td>
+<td><%= a.important %></td>
+</tr>
+
+<% end %>
+
+</table>
+
+

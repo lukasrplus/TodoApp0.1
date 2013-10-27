@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131026185213) do
+ActiveRecord::Schema.define(version: 20131027223950) do
+
+  create_table "archivedtasks", force: true do |t|
+    t.boolean "done"
+    t.string  "content"
+    t.string  "owner"
+    t.boolean "important"
+  end
 
   create_table "tasks", force: true do |t|
     t.string  "content"

@@ -6,10 +6,13 @@ get'/new' => 'tasks#new', :as => "new"
 get'createtask' => 'tasks#createtask'
 
 get'delete/:id' => 'tasks#destroy', :as => "destroy"
-get'archive' => 'tasks#archive', :as => "archive"
+
 
 get'edit/:id' => 'tasks#edit', :as => "edit"
 get'update/:id' => 'tasks#update', :as => "update"
+
+get'archiveindex' => 'tasks#archiveindex', :as => "archiveindex"
+get'archive/:id' => 'tasks#archive', :as => "archive"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
