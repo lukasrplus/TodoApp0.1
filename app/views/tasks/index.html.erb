@@ -2,12 +2,17 @@
 
 <h3><%= link_to "Add new task", new_url %></h3>
 
+<h4>Number of open tasks: <%= @tasks.count %></h4>
+
+<h4>Number of important tasks: <%= @count_important_tasks %></h4>
+
+
+
 <table border="1">
 
 <tr>
 <th>TASK</th>
 <th>OWNER</th>
-<th>DONE</th>
 <th>IMPORTANT</th>
 <th>DELETE</th>
 <th>EDIT</th>
@@ -18,7 +23,6 @@
 <tr>
 <td><%= task.content %></td>
 <td><%= task.owner %></td>
-<td><%= task.done %></td>
 <td><%= task.important %></td>
 <td><%= link_to "delete", destroy_url(task.id) %></td>
 <td><%= link_to "edit", edit_url(task.id) %></td>
