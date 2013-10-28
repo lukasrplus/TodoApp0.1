@@ -1,6 +1,6 @@
 <div class="container">
 
-<h1>MY TASKS FOR TODAY</h1>
+<h1>TASKSMASHR</h1>
 
 <h3><%= link_to "Add new task", new_url %></h3>
 
@@ -26,12 +26,19 @@
 
 <%  @tasks.each do |task| %>
 <tr>
-<td><%= link_to "done", archive_url(task.id) %></td>
+
+<td><button type="button" class="btn btn-success"><%= link_to "DONE", archive_url(task.id) %></button></td>
+
 <td><%= task.content %></td>
+
 <td><%= task.owner %></td>
+
 <td><%= task.important %></td>
-<td><%= link_to "delete", destroy_url(task.id) %></td>
-<td><%= link_to "edit", edit_url(task.id) %></td>
+
+<td><button type="button" class="btn btn-danger"><%= link_to "DELETE", destroy_url(task.id) %></button></td>
+
+
+<td><button type="button" class="btn btn-info"><%= link_to "EDIT", edit_url(task.id) %></button></td>
 </tr>
 
 <% end %>
