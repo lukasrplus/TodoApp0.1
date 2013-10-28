@@ -1,7 +1,7 @@
 <div class="container">
 
 <div class="row">
-  <div class="col-md-4" id="headline_l"><h1>TASKSMASHR</h1></div>
+  <div class="col-md-4" id="headline_l"><h1>TASKSMASHR  <i class="fa fa-gavel"></i></h1></div>
   <div class="col-md-4 col-md-offset-4" id="headline_r"><h3><%= link_to "ADD NEW TASK", new_url %></h3></div>
 </div>
 
@@ -19,7 +19,7 @@
 <table class = "table table-bordered">
 
 <tr>
-<th>DONE?</th>
+<th></th>
 <th>TASK</th>
 <th>OWNER</th>
 <th>IMPORTANT</th>
@@ -31,7 +31,7 @@
 <%  @tasks.each do |task| %>
 <tr>
 
-<td><button type="button" class="btn btn-success"><%= link_to "DONE", archive_url(task.id) %></button></td>
+<td><button type="button" class="btn btn-success"><%= link_to "SMASH", archive_url(task.id) %></button></td>
 
 <td><%= task.content %></td>
 
