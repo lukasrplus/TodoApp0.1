@@ -2,7 +2,8 @@
 
 <h1><%= @task.owner %>, update your task below.</h1>
 
-<form action="/update/<%= @task.id %>">
+<%= form_tag task_url(@task.id), method: 'patch' do %>
+
 
   <label for = "content">CONTENT</label>
   <input id = "content" type = "text_area" name = "content" value = "<%= @task.content %>" >
@@ -23,7 +24,7 @@
 
   <input type= "submit">
 
-</form>
+<% end %>
 
 </div>
 

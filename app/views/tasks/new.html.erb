@@ -1,9 +1,11 @@
 <div class="container">
 
 
-<h1>Add your new task below</h1>
+<h1>SOMETHING NEW TO SMASH?</h1>
 
-<form action="/createtask">
+<%= form_tag tasks_url, method: 'post' do %>
+
+<form action="/tasks/new">
 
   <label for = "content">CONTENT</label>
   <input id = "content" type = "text" name = "content">
@@ -20,8 +22,7 @@
 <input type = "Submit">
 
 
-
-</form>
+<% end %>
 
 
 </div>
