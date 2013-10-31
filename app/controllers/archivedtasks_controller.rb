@@ -20,8 +20,6 @@ def undo
 
 end
 
-def destroy
-end
 
 
 

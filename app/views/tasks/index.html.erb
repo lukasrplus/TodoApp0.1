@@ -1,9 +1,13 @@
 
   <div class="row">
 
-    <div class="col-md-4" id="headline_l"><h3><%= link_to "ADD NEW TASK", new_task_url  %></h3></div>
+    <div class="col-md-3" id="headline_l"><h3><%= link_to "ADD NEW TASK", new_task_url  %></h3></div>
 
-    <div class="col-md-4 col-md-offset-1" id="headline_r"><h3><%= link_to "SMASHED  TASKS", archivedtasks_url %></h3></div>
+
+    <div class="col-md-3" id="headline_c"><h3><%= link_to "IMPORTANT TASKS", "/tasks?sort=important" %></h3></div>
+
+
+    <div class="col-md-3" id="headline_r"><h3><%= link_to "SMASHED  TASKS", archivedtasks_url %></h3></div>
 
   </div>
 
@@ -32,7 +36,7 @@
 
       <td class="center"><button type="button" class="btn btn-success btn-sm btn-block"><%= link_to      "SMASH", archive_task_url(task.id) %></button></td>
 
-      <td><%= link_to task.content, task_url(task.id) %></td>
+      <td class="task"><%= task.content %></td>
 
       <td><%= task.owner %></td>
 
