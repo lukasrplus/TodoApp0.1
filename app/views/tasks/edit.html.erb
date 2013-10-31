@@ -1,31 +1,32 @@
-<div class="container">
+
 
 <h1><%= @task.owner %>, update your task below.</h1>
 
 <%= form_tag task_url(@task.id), method: 'patch' do %>
 
-
-  <label for = "content">CONTENT</label>
-  <input id = "content" type = "text_area" name = "content" value = "<%= @task.content %>" >
-  <br>
-
-  <label for = "owner">OWNER</label>
-  <input id = "owner" type = "text_area" name = "owner" value = "<%= @task.owner %>" >
-  <br>
-
-  <label for = "important">IMPORTANT</label>
-
-<% if @task.important  %>
-  <input id = "important" type = "checkbox" name = "important" checked = "checked" >
-<% else %>
-  <input id = "important" type = "checkbox" name = "important">
-<% end %>
-  <br>
-
-  <input type= "submit">
-
-<% end %>
-
+<div class="form-group">
+<%= label_tag 'content', "Your Task" %>
+<%= text_field_tag 'content', @task.content, class: "form-control" %>
 </div>
+
+<div class="form-group">
+  <%= label_tag 'owner', "Task Owner" %>
+  <%= text_field_tag 'owner', @task.owner, class: "form-control" %>
+</div>
+
+<div class="checkbox">
+  <label for = "important">IMPORTANT</label>
+    <% if @task.important  %>
+      <input id = "important" type = "checkbox" name = "important" checked = "checked" >
+    <% else %>
+      <input id = "important" type = "checkbox" name = "important">
+    <% end %>
+</div>
+
+<button type="submit" class="btn btn-default" id = "newtask">Update your task</button>
+
+<% end %>
+
+
 
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TodoApp01</title>
+  <title>TASKSMASHR</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -17,19 +17,36 @@
     <!-- Bootstrap core CSS -->
 
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-
-
-
-
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 
 </head>
+
+
+
 <body>
 
-<%= yield %>
+  <div class="container">
+
+  <header>
+      <div class="row">
+
+        <div class="col-md-12" id="headline_l">
+
+
+
+            <h1>TASKSMASHR  <i class="fa fa-gavel"></i></h1>
+
+
+      </div>
+  </header>
+
+
+  <%= yield %>
+
+
+  </div>
+
 
 </body>
 </html>
