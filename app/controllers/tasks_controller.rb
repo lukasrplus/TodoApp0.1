@@ -3,13 +3,14 @@ class TasksController < ApplicationController
 
   def index
 
-if params[:sort].present?
-  @tasks = Task.where(important: true)
-else
-  @tasks = Task.all
-end
+    if params[:sort].present?
+      @tasks = Task.where(important: true)
+    else
+      @tasks = Task.all
+    end
 
     important_tasks = Array.new
+
     @tasks.each do |t|
 
       if t.important
@@ -22,8 +23,10 @@ end
 
   end
 
+
   def new
 end
+
 
   def create
    t = Task.new
@@ -34,9 +37,11 @@ end
    redirect_to tasks_url
 end
 
+
   def show
     task = Task.find_by(id: params[:id])
 end
+
 
 def destroy
   task = Task.find_by(id: params[:id])
@@ -44,9 +49,11 @@ def destroy
   redirect_to tasks_url
 end
 
+
 def edit
 @task = Task.find_by(id: params[:id])
 end
+
 
 def update
 task = Task.find_by(id: params[:id])
@@ -56,6 +63,7 @@ task.important = params["important"]
 task.save
 redirect_to tasks_url
 end
+
 
 def archive
   task = Task.find_by(id: params[:id])
