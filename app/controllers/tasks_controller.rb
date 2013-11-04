@@ -1,5 +1,9 @@
 class TasksController < ApplicationController
 
+  def welcome
+  end
+
+
 
   def index
 

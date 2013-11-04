@@ -3,6 +3,8 @@ TodoApp01::Application.routes.draw do
 
 # TASKSCONTROLLER
 
+root 'tasks#welcome'
+
 get '/tasks' => 'tasks#index'
 
 get '/tasks/new' => 'tasks#new', :as => "new_task"
