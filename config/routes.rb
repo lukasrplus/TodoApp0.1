@@ -1,5 +1,16 @@
 TodoApp01::Application.routes.draw do
 
+  get "/login" => 'sessions#new'
+  get "/logout" => 'sessions#destroy'
+  post "/sessions" => 'sessions#create'
+
+
+# USERSCONTROLLER
+
+resources :users
+
+#
+
 
 # TASKSCONTROLLER
 

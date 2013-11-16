@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131027223950) do
+ActiveRecord::Schema.define(version: 20131116183608) do
 
   create_table "archivedtasks", force: true do |t|
     t.boolean "done"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20131027223950) do
     t.string  "content"
     t.string  "owner"
     t.boolean "important"
+    t.integer "user_id"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

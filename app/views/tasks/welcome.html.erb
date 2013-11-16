@@ -1,5 +1,16 @@
-<h2>No more GTD. Time to GTS. <small>getting tasks smashed</small></h2>
-<%= form_tag tasks_url, method: 'get' do %>
-<button type="submit" class="btn btn-danger" id = "welcome_button">START SMASHING</button>
-<% end %>
 
+
+<div class="row">
+  <div class="col-md-12">
+    <h2>Sick of getting things done?<small>get ready for smashing your tasks</small></h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+    <%= form_tag new_user_url, method: 'get' do %>
+    <button type="submit" class="btn btn-info" id = "welcome_button">CREATE A NEW ACCOUNT</button>
+    <% end %>
+  </div>
+
+</div>

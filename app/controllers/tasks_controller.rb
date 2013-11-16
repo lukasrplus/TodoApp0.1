@@ -29,16 +29,22 @@ class TasksController < ApplicationController
 
 
   def new
-end
+  end
 
 
   def create
-   t = Task.new
-   t.content = params["content"]
-   t.owner = params["owner"]
-   t.important = params["important"]
-   t.save
+   @t = Task.new
+   @t.content = params["content"]
+   @t.owner = params["owner"]
+   @t.important = params["important"]
+
+  if @t.save
    redirect_to tasks_url
+  else
+      @errors = @t.errors.full_messages
+      render 'new'
+  end
+
 end
 
 

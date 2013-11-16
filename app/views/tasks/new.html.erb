@@ -2,6 +2,13 @@
 
 <h2>SOMETHING NEW TO SMASH?</h2>
 
+<% if @errors %>
+  <% @errors.each do |msg| %>
+  <h2><%= msg %></h2>
+  <% end %>
+
+<% end %>
+
 <%= form_tag tasks_url, method: 'post' do %>
 
 <div class="form-group">
