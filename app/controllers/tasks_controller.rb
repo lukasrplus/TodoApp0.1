@@ -1,6 +1,9 @@
 class TasksController < ApplicationController
 
   def welcome
+
+    reset_session
+
   end
 
 

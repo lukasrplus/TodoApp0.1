@@ -1,6 +1,6 @@
 
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-12">
     <h2>Sick of getting things done?<small>get ready for smashing your tasks</small></h2>
   </div>
@@ -13,4 +13,38 @@
     <% end %>
   </div>
 
+</div> -->
+
+<div class="col-md-3">
+
 </div>
+
+
+
+    <div class="col-md-6 sign-up-box">
+
+      <div class="row">
+        <h2 class="sign-up-head">Signup and start smashing.</h2>
+      </div>
+
+        <div class="form-goup">
+          <%= form_tag users_url, method: 'post' do %>
+              <h3><%= label_tag 'username', 'User name' %></h3>
+              <%= text_field_tag 'username', nil, class: 'form-control sign-up' %>
+
+              <h3><%= label_tag 'email', 'Email' %></h3>
+              <%= text_field_tag 'email', nil, class: 'form-control sign-up' %>
+
+              <h3><%= label_tag 'password', 'Password' %></h3>
+              <%= password_field_tag 'password', nil, class: 'form-control sign-up' %>
+
+              <h3><%= label_tag 'password_confirmation', 'Password Confirmation' %></h3>
+              <%= password_field_tag 'password_confirmation', nil, class: 'form-control sign-up' %>
+
+              <%= submit_tag 'Create your account', class: 'form-control btn btn-default sign-up-button' %>
+          <% end %>
+        </div>
+
+    </div>
+
+

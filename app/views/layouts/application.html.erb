@@ -38,7 +38,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">TASKSMASHR  <i class="fa fa-gavel"></i></a>
+    <a class="navbar-brand" href="/tasks">TASKSMASHR  <i class="fa fa-gavel"></i></a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -49,7 +49,19 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Login</a></li>
+
+      <% if session[:u_id].present? %>
+       <% user = User.find_by(:id => session[:u_id]) %>
+       <li><%= link_to user.username ,edit_user_url(user.id) %></li>
+       <li><%= link_to "Logout", root_url %></li>
+
+       <% else %>
+
+       <li><%= link_to "Login", login_url %></li>
+
+      <% end %>
+
+
 
     </ul>
   </div><!-- /.navbar-collapse -->

@@ -1,0 +1,35 @@
+
+
+
+<div class="col-md-3">
+
+</div>
+
+
+
+    <div class="col-md-6 sign-up-box">
+      <% user = User.find_by(:id => session[:u_id]) %>
+      <div class="row">
+        <h2 class="sign-up-head"><%= user.username %>, edit your profile here.</h2>
+      </div>
+
+        <div class="form-goup">
+          <%= form_tag user_url(user.id), method: 'patch' do %>
+              <h3><%= label_tag 'username', 'User name' %></h3>
+              <%= text_field_tag 'username', user.username, class: 'form-control sign-up' %>
+
+              <h3><%= label_tag 'email', 'Email' %></h3>
+              <%= text_field_tag 'email', user.email, class: 'form-control sign-up' %>
+
+              <h3><%= label_tag 'password', 'New Password' %></h3>
+              <%= password_field_tag 'password', nil, class: 'form-control sign-up' %>
+
+              <h3><%= label_tag 'password_confirmation', 'Confirm new password' %></h3>
+              <%= password_field_tag 'password_confirmation', nil, class: 'form-control sign-up' %>
+
+              <%= submit_tag 'Update your account', class: 'form-control btn btn-default sign-up-button' %>
+          <% end %>
+        </div>
+
+    </div>
+
