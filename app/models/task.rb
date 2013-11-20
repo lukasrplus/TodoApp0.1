@@ -1,6 +1,6 @@
 class Task < ActiveRecord::Base
 
-validates_presence_of :owner, :content
+validates_presence_of :content
 belongs_to :user
 
 end

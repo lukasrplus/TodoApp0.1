@@ -10,11 +10,10 @@ def create
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
     session[:u_id] = user.id
-    redirect_to tasks_url, notice: "Hello, #{user.email}"
+    redirect_to tasks_url, notice: "Hello, #{user.username}"
 
     else
-    flash.now.alert = "Invalid email or password"
-    render "new"
+    redirect_to login_url, notice: "Invalid email or password"
     end
 
 end

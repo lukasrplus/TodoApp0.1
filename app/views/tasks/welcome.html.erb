@@ -15,9 +15,29 @@
 
 </div> -->
 
+<div class="row">
+
+<div class="col-md-12">
+
+<% if @errors.present? %>
+<h3><% @errors.each do |message|  %></h3>
+<p><%= message %></p>
+<% end %>
+<% end %>
+
+</div>
+
+
+</div>
+
+
+
+
+
 <div class="col-md-3">
 
 </div>
+
 
 
 

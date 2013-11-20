@@ -10,10 +10,12 @@ class TasksController < ApplicationController
 
   def index
 
+    user = User.find_by(id: session[:u_id])
+    @tasks = user.tasks
+
     if params[:sort].present?
-      @tasks = Task.where(important: true)
-    else
-      @tasks = Task.all
+      @tasks = @tasks.where(important: true)
+
     end
 
     important_tasks = Array.new
@@ -40,6 +42,9 @@ class TasksController < ApplicationController
    @t.content = params["content"]
    @t.owner = params["owner"]
    @t.important = params["important"]
+
+   user = User.find_by(id: session[:u_id])
+   @t.user_id = user.id
 
   if @t.save
    redirect_to tasks_url

@@ -4,15 +4,24 @@ def new
 end
 
 def create
-  u = User.new
-  u.username = params[:username]
-  u.email = params[:email]
-  u.password = params[:password]
-  u.password_confirmation = params[:password_confirmation]
-  u.save
-  session[:u_id] = u.id
-  redirect_to tasks_url
+  @u = User.new
+  @u.username = params[:username]
+  @u.email = params[:email]
+  @u.password = params[:password]
+  @u.password_confirmation = params[:password_confirmation]
+
+    if @u.save
+      session[:u_id] = @u.id  # sign in!
+      redirect_to tasks_url
+    else
+      @errors = @u.errors.full_messages
+      render 'tasks/welcome'
+    end
+
+
 end
+
+
 
 def show
 end
