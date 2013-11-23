@@ -17,9 +17,9 @@
 
 <script type="text/javascript">
 
-// $(document).ready(function() {
-//   $("#sign_up").fadeOut(1000);
-// });
+$(document).ready(function() {
+  $(".alert-danger").fadeOut(5000, "linear");
+});
 
 
 </script>
@@ -31,9 +31,13 @@
 
 <% if @errors.present? %>
 <% @errors.each do |message|  %>
-<h4><%= message %></h4>
+<div class="alert alert-danger"><%= message %></div>
 <% end %>
+
+
 <% end %>
+
+
 
 </div>
 
