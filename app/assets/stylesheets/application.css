@@ -11,5 +11,7 @@
  *= require_self
  *= require bootstrap
  *= require styles
+ *= require fancybox
+ *= require_tree .
 
  */

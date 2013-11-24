@@ -15,15 +15,29 @@
 
 </div> -->
 
+<script type="text/javascript">
+
+$(document).ready(function() {
+  $(".alert-danger").fadeOut(5000, "linear");
+});
+
+
+</script>
+
+
 <div class="row">
 
 <div class="col-md-12">
 
 <% if @errors.present? %>
-<h3><% @errors.each do |message|  %></h3>
-<p><%= message %></p>
+<% @errors.each do |message|  %>
+<div class="alert alert-danger"><%= message %></div>
 <% end %>
+
+
 <% end %>
+
+
 
 </div>
 
@@ -41,7 +55,7 @@
 
 
 
-    <div class="col-md-6 sign-up-box">
+    <div class="col-md-6 sign-up-box" id="sign_up">
 
       <div class="row">
         <h2 class="sign-up-head">Signup and start smashing.</h2>
