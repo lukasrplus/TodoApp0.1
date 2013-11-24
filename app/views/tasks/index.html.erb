@@ -1,3 +1,18 @@
+
+<% if session[:u_id].present? %>
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+  $(".alert-info").fadeOut(5000, "linear");
+});
+
+
+</script>
+
+
+
 <% if notice.present? %>
 <div class="alert alert-info"><%= notice %></div>
 <% end %>
@@ -13,7 +28,7 @@
 
       <div class="form-group" id="task_input">
         <label class="sr-only" for="content"></label>
-        <%= text_field_tag 'content', nil, placeholder: "What do you want to smash today?", class: "form-control" %>
+        <%= text_field_tag 'content', nil, placeholder: "#{user.username}, what do you want to smash today?", class: "form-control" %>
       </div>
 
     <div class="form-group">
@@ -124,5 +139,13 @@
 
 
 </div>
+
+<% else %>
+
+<% redirect_to 'tasks/welcome' %>
+
+<% end %>
+
+
 
 

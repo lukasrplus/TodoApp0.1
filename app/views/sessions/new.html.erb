@@ -5,18 +5,51 @@
 
 
 
+<!-- TESTAREA -->
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+  $("a.fancybox").fancybox({
+    // autoSize: false, // shouldn't be true ?
+    // fitToView: false,
+    // maxWidth: 940
+});
+});
+
+
+</script>
+
+
+
+
+
+<%= link_to "Lightbox", "#lightbox", :class => "fancybox" %>
+
+
+
+
+
+
+
+<!-- TESTAREA -->
+
+
+
+
+
 <div class="col-md-3">
 
 </div>
 
 
 
-    <div class="col-md-6 sign-up-box">
+    <div  id="lightbox" style="display:none">
 
-      <div class="row">
+   <!--    <div class="row">
         <h2 class="sign-up-head">Great to see you again.</h2>
         <h2 class="sign-up-head">Login and smash'em.</h2>
-      </div>
+      </div> -->
 
         <div class="form-goup">
           <%= form_tag sessions_url do %>

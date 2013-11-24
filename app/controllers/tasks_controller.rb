@@ -10,27 +10,29 @@ class TasksController < ApplicationController
 
   def index
 
-    user = User.find_by(id: session[:u_id])
-    @tasks = user.tasks
 
-    if params[:sort].present?
-      @tasks = @tasks.where(important: true)
+        user = User.find_by(id: session[:u_id])
+        @tasks = user.tasks
 
-    end
+        if params[:sort].present?
+          @tasks = @tasks.where(important: true)
 
-    important_tasks = Array.new
+        end
 
-    @tasks.each do |t|
+        important_tasks = Array.new
 
-      if t.important
-        important_tasks << t
+        @tasks.each do |t|
+
+          if t.important
+            important_tasks << t
+          end
+
+        end
+
+        @count_important_tasks = important_tasks.count
+
       end
 
-    end
-
-    @count_important_tasks = important_tasks.count
-
-  end
 
 
   def new
