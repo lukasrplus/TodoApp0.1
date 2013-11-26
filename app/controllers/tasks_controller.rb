@@ -91,6 +91,7 @@ def archive
   a.content = task.content
   a.owner = task.owner
   a.important = task.important
+  a.user_id = task.user_id
   a.save
   task.destroy
   redirect_to tasks_url

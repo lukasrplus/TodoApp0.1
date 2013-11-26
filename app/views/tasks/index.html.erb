@@ -87,7 +87,7 @@ $(document).ready(function() {
       <%  @tasks.each do |task| %>
       <tr>
 
-      <td class="center"><button type="button" class="btn btn-success btn-sm btn-block"><%= link_to      "SMASH", archive_task_url(task.id) %></button></td>
+      <td class="center"><button type="button" class="btn btn-success btn-sm btn-block"><%= link_to "SMASH", archive_task_url(task.id), method: :delete %></button></td>
 
       <td class="task"><%= task.content %></td>
 

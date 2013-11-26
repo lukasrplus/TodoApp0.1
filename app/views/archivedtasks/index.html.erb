@@ -1,5 +1,5 @@
 
-
+<% if session[:u_id].present? %>
 
 <h2>SMASHED TASKS</h2>
 
@@ -32,3 +32,8 @@
 </table>
 
 
+<% else %>
+
+<% redirect_to 'tasks/welcome' %>
+
+<% end %>

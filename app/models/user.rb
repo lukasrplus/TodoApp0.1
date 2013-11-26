@@ -10,5 +10,6 @@ validates_presence_of :email, :on => :create
 # validates_presence_of :password_confirmation, :on => :create
 
 has_many :tasks
+has_many :archivedtasks
 
 end

@@ -28,7 +28,7 @@ delete '/tasks/:id' => 'tasks#destroy'
 get '/tasks/:id/edit' => 'tasks#edit', :as => "edit_task"
 patch '/tasks/:id' => 'tasks#update'
 
-get '/tasks/:id/archive' => 'tasks#archive', :as => "archive_task"
+delete '/tasks/:id/archive' => 'tasks#archive', :as => "archive_task"
 
 
 # ARCHIVEDTASKS CONTROLLER

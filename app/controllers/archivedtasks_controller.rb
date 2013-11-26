@@ -1,7 +1,8 @@
 class ArchivedtasksController < ApplicationController
 
 def index
-  @archivedtasks = Archivedtask.all
+  user = User.find_by(id: session[:u_id])
+  @archivedtasks = user.archivedtasks
 end
 
 def undo
