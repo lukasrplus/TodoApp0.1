@@ -12,6 +12,7 @@ def create
 
     if @u.save
       session[:u_id] = @u.id  # sign in!
+      UserMailer.send_signup_welcome(@u).deliver
       redirect_to tasks_url
     else
       @errors = @u.errors.full_messages

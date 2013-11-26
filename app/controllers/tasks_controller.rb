@@ -39,7 +39,7 @@ class TasksController < ApplicationController
   end
 
 
-  def create
+def create
    @t = Task.new
    @t.content = params["content"]
    @t.owner = params["owner"]
@@ -60,7 +60,7 @@ end
 
   def show
     task = Task.find_by(id: params[:id])
-end
+  end
 
 
 def destroy
