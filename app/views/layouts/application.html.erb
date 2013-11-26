@@ -98,7 +98,12 @@ $(document).ready(function() {
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
+    <% if session[:u_id].present? %>
+    <a class="navbar-brand" href="/tasks">TASKSMASHR  <i class="fa fa-gavel"></i></a>
+     <% else %>
     <a class="navbar-brand" href="/">TASKSMASHR  <i class="fa fa-gavel"></i></a>
+    <% end %>
+
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
