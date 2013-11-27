@@ -110,7 +110,11 @@ $(document).ready(function() {
       </td>
 
 
-      <td class="center"><button type="button" class="btn btn-info btn-sm btn-block"><%= link_to "EDIT", edit_task_url(task.id) %></button></td>
+     <!--  <td class="center"><button type="button" class="btn btn-info btn-sm btn-block"><%= link_to "EDIT", edit_task_url(task.id) %></button></td> -->
+     <td class="center">
+     <%= link_to '<i class="fa fa-pencil-square fa-2x"></i>'.html_safe, edit_task_url(task.id) %>
+     </td>
+
       </tr>
 
       <% end %>
