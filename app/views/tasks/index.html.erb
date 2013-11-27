@@ -85,7 +85,7 @@ $(document).ready(function() {
 
 
       <%  @tasks.each do |task| %>
-      <tr>
+      <tr id="task_<%= task.id %>">
 
       <td class="center" id="smash_task">
 
@@ -105,7 +105,7 @@ $(document).ready(function() {
 
   <!--  <button type="button" class="btn btn-danger btn-sm btn-block"><%= link_to "DELETE", task_url(task.id), method: 'delete' %></button> -->
 
-             <%= link_to '<i class="fa fa-trash-o fa-2x"></i>'.html_safe, task_url(task.id), method: 'delete' %>
+             <%= link_to '<i class="fa fa-trash-o fa-2x"></i>'.html_safe, task_url(task.id), method: 'delete', remote: true %>
 
       </td>
 

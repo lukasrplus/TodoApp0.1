@@ -64,9 +64,21 @@ end
 
 
 def destroy
-  task = Task.find_by(id: params[:id])
-  task.destroy
-  redirect_to tasks_url
+  @task = Task.find_by(id: params[:id])
+  @task.destroy
+
+
+    respond_to do |format|
+      format.html do
+        redirect_to tasks_url
+      end
+      format.js
+    end
+
+
+
+
+
 end
 
 
