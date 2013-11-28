@@ -84,6 +84,14 @@ end
 
 def edit
 @task = Task.find_by(id: params[:id])
+
+respond_to do |format|
+      format.html do
+        redirect_to tasks_url
+      end
+      format.js
+    end
+
 end
 
 
@@ -94,6 +102,14 @@ task.owner = params["owner"]
 task.important = params["important"]
 task.save
 redirect_to tasks_url
+
+    # respond_to do |format|
+    #   format.html do
+    #     redirect_to tasks_url
+    #   end
+    #   format.js
+    # end
+
 end
 
 

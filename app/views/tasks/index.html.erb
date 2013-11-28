@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 
 
-<%= form_tag tasks_url, method: 'post', class: "form-inline" do %>
+<%= form_tag tasks_url, method: 'post', class: "form-inline", id:"create_task_field" do %>
 
       <% user = User.find_by(id: session[:u_id]) %>
       <%= hidden_field_tag :user_id, user.id  %>
@@ -31,14 +31,14 @@ $(document).ready(function() {
         <%= text_field_tag 'content', nil, placeholder: "#{user.username}, what do you want to smash today?", class: "form-control" %>
       </div>
 
-    <div class="form-group">
+<!--     <div class="form-group">
       <div class="checkbox">
       <label for = "important">IMPORTANT</label>
       <input id = "important" type = "checkbox" name = "important">
       </div>
-    </div>
+    </div> -->
 
-    <button type="submit" class="btn btn-default">Add new task</button>
+    <button type="submit" class="btn btn-default" style="display:none">Add new task</button>
 
 
 
@@ -112,7 +112,7 @@ $(document).ready(function() {
 
      <!--  <td class="center"><button type="button" class="btn btn-info btn-sm btn-block"><%= link_to "EDIT", edit_task_url(task.id) %></button></td> -->
      <td class="center">
-     <%= link_to '<i class="fa fa-pencil-square fa-2x"></i>'.html_safe, edit_task_url(task.id) %>
+     <%= link_to '<i class="fa fa-pencil-square fa-2x"></i>'.html_safe, edit_task_url(task.id), remote: true %>
      </td>
 
       </tr>

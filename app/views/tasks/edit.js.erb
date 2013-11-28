@@ -1,0 +1,13 @@
+$("#task_<%= @task.id %>").hide();
+$("#create_task_field").replaceWith('<%= j(render 'edit_task', :task => @task) %>');
+
+// $("content")
+
+
+
+// $("#update_action").on("click", function() {
+//   $("#task_<%= @task.id %>").show();
+// });
+
+
+

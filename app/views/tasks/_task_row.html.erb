@@ -1,0 +1,34 @@
+
+
+
+      <tr id="task_<%= task.id %>">
+
+      <td class="center" id="smash_task">
+
+
+       <!--  <button type="button" class="btn btn-success btn-sm btn-block"><%= link_to "SMASH", archive_task_url(task.id), method: :delete %></button> -->
+        <%= link_to '<i class="fa fa-circle-o fa-2x"></i>'.html_safe, archive_task_url(task.id), method: :delete %>
+
+      </td>
+
+      <td class="task" id="task_content"><%= task.content %></td>
+
+    <!--   <td><%= task.owner %></td> -->
+
+      <td><%= task.important %></td>
+
+      <td class="center">
+
+  <!--  <button type="button" class="btn btn-danger btn-sm btn-block"><%= link_to "DELETE", task_url(task.id), method: 'delete' %></button> -->
+
+             <%= link_to '<i class="fa fa-trash-o fa-2x"></i>'.html_safe, task_url(task.id), method: 'delete', remote: true %>
+
+      </td>
+
+
+     <!--  <td class="center"><button type="button" class="btn btn-info btn-sm btn-block"><%= link_to "EDIT", edit_task_url(task.id) %></button></td> -->
+     <td class="center">
+     <%= link_to '<i class="fa fa-pencil-square fa-2x"></i>'.html_safe, edit_task_url(task.id), remote: true %>
+     </td>
+
+      </tr>
