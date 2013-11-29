@@ -2,7 +2,7 @@ var content_update = $('input[name=content]')
 $("#task_<%= @task.id %>").remove();
 
 
-$('#task_input').replaceWith('#create_task_field');
+$('#task_input').replaceWith('<%= j(render 'new_task_input_form') %>');
 
 
 

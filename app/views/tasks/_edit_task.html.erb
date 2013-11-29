@@ -10,7 +10,7 @@
         <%= text_field_tag 'content', @task.content, class: "form-control" %>
       </div>
 
-    <div class="form-group">
+<!--     <div class="form-group">
       <div class="checkbox">
       <label for = "important">IMPORTANT</label>
       <% if @task.important  %>
@@ -19,9 +19,9 @@
       <input id = "important" type = "checkbox" name = "important">
       <% end %>
       </div>
-    </div>
+    </div> -->
 
-    <button type="submit" class="btn btn-default" id="update_action">Update task</button>
+    <button type="submit" class="btn btn-default" id="update_action" style="display:none">Update task</button>
 
 
 
