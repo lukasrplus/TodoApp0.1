@@ -1,0 +1,15 @@
+var content_update = $('input[name=content]')
+$("#task_<%= @task.id %>").remove();
+
+
+$('#task_input').replaceWith('<%= j(render 'new_task_input_form') %>');
+
+
+
+$('tbody').append("<%= escape_javascript(render('task_row', :task => @task)) %>");
+
+
+
+// ("<tr id="task_<%= @task.id %>"" + content_update + "</tr>")
+
+

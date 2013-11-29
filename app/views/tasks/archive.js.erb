@@ -1,0 +1,9 @@
+$("#task_<%= @task.id %>").remove();
+
+// $(".smash").slideDown(750).delay(1000).slideUp(400);
+
+// $("body").effect('bounce', {times:5}, 2000);
+
+$("#smash").slideDown(750, function(){
+  $(this).delay(300).effect('bounce', {times:30}, 2000).slideUp(1000);
+});

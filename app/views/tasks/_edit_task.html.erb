@@ -1,0 +1,28 @@
+<%= form_tag task_url(@task.id), method: 'patch', class: "form-inline", remote: true, authenticity_token: true do %>
+
+      <% user = User.find_by(id: session[:u_id]) %>
+      <%= hidden_field_tag :user_id, user.id  %>
+
+
+
+      <div class="form-group" id="task_input">
+        <label class="sr-only" for="content"></label>
+        <%= text_field_tag 'content', @task.content, class: "form-control" %>
+      </div>
+
+<!--     <div class="form-group">
+      <div class="checkbox">
+      <label for = "important">IMPORTANT</label>
+      <% if @task.important  %>
+      <input id = "important" type = "checkbox" name = "important" checked = "checked" >
+      <% else %>
+      <input id = "important" type = "checkbox" name = "important">
+      <% end %>
+      </div>
+    </div> -->
+
+    <button type="submit" class="btn btn-default" id="update_action" style="display:none">Update task</button>
+
+
+
+<% end %>
