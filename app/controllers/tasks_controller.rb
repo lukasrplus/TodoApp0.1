@@ -96,19 +96,19 @@ end
 
 
 def update
-task = Task.find_by(id: params[:id])
-task.content = params["content"]
-task.owner = params["owner"]
-task.important = params["important"]
-task.save
-redirect_to tasks_url
+@task = Task.find_by(id: params[:id])
+@task.content = params["content"]
+@task.owner = params["owner"]
+@task.important = params["important"]
+@task.save
+# redirect_to tasks_url
 
-    # respond_to do |format|
-    #   format.html do
-    #     redirect_to tasks_url
-    #   end
-    #   format.js
-    # end
+    respond_to do |format|
+      format.html do
+        redirect_to tasks_url
+      end
+      format.js
+    end
 
 end
 
