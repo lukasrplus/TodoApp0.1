@@ -114,15 +114,27 @@ end
 
 
 def archive
-  task = Task.find_by(id: params[:id])
+  @task = Task.find_by(id: params[:id])
   a = Archivedtask.new
-  a.content = task.content
-  a.owner = task.owner
-  a.important = task.important
-  a.user_id = task.user_id
+  a.content = @task.content
+  a.owner = @task.owner
+  a.important = @task.important
+  a.user_id = @task.user_id
   a.save
-  task.destroy
-  redirect_to tasks_url
+  @task.destroy
+  # redirect_to tasks_url
+
+
+    respond_to do |format|
+      format.html do
+        redirect_to tasks_url
+      end
+      format.js
+    end
+
+
+
+
 end
 
 

@@ -50,7 +50,7 @@ $(document).ready(function() {
 
 
        <!--  <button type="button" class="btn btn-success btn-sm btn-block"><%= link_to "SMASH", archive_task_url(task.id), method: :delete %></button> -->
-        <%= link_to '<i class="fa fa-circle-o fa-2x"></i>'.html_safe, archive_task_url(task.id), method: :delete %>
+        <%= link_to '<i class="fa fa-circle-o fa-2x"></i>'.html_safe, archive_task_url(task.id), method: :delete, remote: true %>
 
       </td>
 
