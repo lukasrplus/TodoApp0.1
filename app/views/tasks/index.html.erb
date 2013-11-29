@@ -5,7 +5,7 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-  $(".alert-info").fadeOut(5000, "linear");
+  $(".alert-info").fadeOut(3000, "linear");
 });
 
 
@@ -33,15 +33,6 @@ $(document).ready(function() {
 
       <table class = "table borderless" id = "task_table">
 
-<!--       <tr>
-      <th></th>
-      <th id="task_content">TASK</th>
-      <th>OWNER</th>
-      <th>IMPORTANT</th>
-      <th></th>
-      <th></th>
-      </tr> -->
-
 
       <%  @tasks.each do |task| %>
       <tr id="task_<%= task.id %>">
@@ -50,7 +41,7 @@ $(document).ready(function() {
 
 
        <!--  <button type="button" class="btn btn-success btn-sm btn-block"><%= link_to "SMASH", archive_task_url(task.id), method: :delete %></button> -->
-        <%= link_to '<i class="fa fa-circle-o fa-2x"></i>'.html_safe, archive_task_url(task.id), method: :delete, remote: true %>
+        <%= link_to '<i class="fa fa-circle-o fa-2x"></i>'.html_safe, archive_task_url(task.id), method: :delete, remote: true, authenticity_token: true %>
 
       </td>
 
@@ -64,14 +55,14 @@ $(document).ready(function() {
 
   <!--  <button type="button" class="btn btn-danger btn-sm btn-block"><%= link_to "DELETE", task_url(task.id), method: 'delete' %></button> -->
 
-             <%= link_to '<i class="fa fa-trash-o fa-2x"></i>'.html_safe, task_url(task.id), method: 'delete', remote: true %>
+             <%= link_to '<i class="fa fa-trash-o fa-2x"></i>'.html_safe, task_url(task.id), method: 'delete', remote: true, authenticity_token: true %>
 
       </td>
 
 
      <!--  <td class="center"><button type="button" class="btn btn-info btn-sm btn-block"><%= link_to "EDIT", edit_task_url(task.id) %></button></td> -->
      <td class="center">
-     <%= link_to '<i class="fa fa-pencil-square fa-2x"></i>'.html_safe, edit_task_url(task.id), remote: true %>
+     <%= link_to '<i class="fa fa-pencil-square fa-2x"></i>'.html_safe, edit_task_url(task.id), remote: true, authenticity_token: true %>
      </td>
 
       </tr>
@@ -81,35 +72,13 @@ $(document).ready(function() {
       </table>
 
   </div>
-
-
-<!--   <div class="col-md-3">
-
-
-        <h2>Open tasks: <%= @tasks.count %></h2>
-
-        <h2>Important tasks: <%= @count_important_tasks %></h2>
-
-  </div> -->
-
-  <div class="row">
-
-    <div class="col-md-6">
-
-      <h2 class="center_align">Open tasks: <%= @tasks.count %></h2>
-
-    </div>
-
-    <div class="col-md-6">
-
-      <h2 class="center_align">Important tasks: <%= @count_important_tasks %></h2>
-
-    </div>
-
-  </div>
-
-
 </div>
+
+
+
+
+
+
 
 <% else %>
 

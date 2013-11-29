@@ -49,7 +49,12 @@ def create
    @t.user_id = user.id
 
   if @t.save
-   redirect_to tasks_url
+        respond_to do |format|
+           format.html do
+             redirect_to tasks_url
+           end
+           format.js
+         end
   else
       @errors = @t.errors.full_messages
       render 'new'

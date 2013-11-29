@@ -1,4 +1,4 @@
-<%= form_tag task_url(@task.id), method: 'patch', class: "form-inline", remote: true do %>
+<%= form_tag task_url(@task.id), method: 'patch', class: "form-inline", remote: true, authenticity_token: true do %>
 
       <% user = User.find_by(id: session[:u_id]) %>
       <%= hidden_field_tag :user_id, user.id  %>

@@ -1,0 +1,2 @@
+$('tbody').append("<%= escape_javascript(render('task_row', :task => @t)) %>");
+$('#task_input').replaceWith('<%= j(render 'new_task_input_form') %>');

@@ -1,5 +1,5 @@
 
-<%= form_tag tasks_url, method: 'post', class: "form-inline", id:"create_task_field" do %>
+<%= form_tag tasks_url, method: 'post', class: "form-inline", id:"create_task_field", remote: true, authenticity_token: true do %>
 
       <% user = User.find_by(id: session[:u_id]) %>
       <%= hidden_field_tag :user_id, user.id  %>
