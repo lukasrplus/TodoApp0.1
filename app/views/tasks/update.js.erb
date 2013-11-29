@@ -1,5 +1,11 @@
 var content_update = $('input[name=content]')
 $("#task_<%= @task.id %>").remove();
+
+
+$('#task_input').replaceWith('#create_task_field');
+
+
+
 $('tbody').append("<%= escape_javascript(render('task_row', :task => @task)) %>");
 
 
