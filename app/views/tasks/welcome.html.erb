@@ -27,38 +27,29 @@ $(document).ready(function() {
 
 <div class="row">
 
-<div class="col-md-12">
+      <div class="col-md-12">
 
-<% if @errors.present? %>
-<% @errors.each do |message|  %>
-<div class="alert alert-danger"><%= message %></div>
-<% end %>
+      <% if @errors.present? %>
+      <% @errors.each do |message|  %>
+      <div class="alert alert-danger"><%= message %></div>
+      <% end %>
 
 
-<% end %>
+      <% end %>
 
+
+
+      </div>
 
 
 </div>
 
 
-</div>
-
-
-
-
-
-<div class="col-md-3">
-
-</div>
-
-
-
-
-    <div class="col-md-6 sign-up-box" id="sign_up">
+<!-- DISPLAY ONLY WHEN LOGIN IS CLICKED -->
+    <div id="sign_up" style="display:none">
 
       <div class="row">
-        <h2 class="sign-up-head">Signup and start smashing.</h2>
+        <h2>Signup</h2>
       </div>
 
         <div class="form-goup">
@@ -80,5 +71,227 @@ $(document).ready(function() {
         </div>
 
     </div>
+<!-- END OF SIGNUP LIGHTBOX -->
+
+
+
+
+
+
+<!-- <div class="row" id="tagline">
+
+    <div class="col-md-4 col-md-offset-4">
+
+        <button type="button" class="btn btn-success sign-up-button"><%= link_to "Click here to create your account!", "#sign_up", :class => "fancybox" %></button>
+
+    </div>
+
+</div> -->
+
+<%= form_tag root_url, method: 'get' do %>
+
+
+      <div class="form-group" id="task_input">
+        <label class="sr-only" for="content"></label>
+        <%= text_field_tag 'content', "Welcome to TASKSMASHR. In a few seconds you will add your tasks here.", class: "form-control" %>
+      </div>
+
+<!--     <div class="form-group">
+      <div class="checkbox">
+      <label for = "important">IMPORTANT</label>
+      <input id = "important" type = "checkbox" name = "important">
+      </div>
+    </div> -->
+
+    <button type="submit" class="btn btn-default" style="display:none">Add new task</button>
+
+
+
+
+
+<% end %>
+
+
+
+
+
+
+
+
+<div class="row">
+
+  <div class="col-md-12">
+
+
+      <table class = "table borderless" id = "task_table">
+
+
+    <tr>
+
+      <td class="center" id="smash_task">
+
+
+        <i class="fa fa-circle-o fa-2x"></i>
+
+      </td>
+
+      <td class="task" id="task_content">Sign up for an account.</td>
+
+
+      <td class="center">
+
+             <i class="fa fa-trash-o fa-2x"></i>
+
+      </td>
+
+     <td class="center">
+      <i class="fa fa-pencil-square fa-2x"></i>
+     </td>
+
+  </tr>
+
+   <tr>
+
+      <td class="center" id="smash_task">
+
+
+        <i class="fa fa-circle-o fa-2x"></i>
+
+      </td>
+
+      <td class="task" id="task_content">Focus on 5 things you want to achieve today.</td>
+
+
+      <td class="center">
+
+             <i class="fa fa-trash-o fa-2x"></i>
+
+      </td>
+
+     <td class="center">
+      <i class="fa fa-pencil-square fa-2x"></i>
+     </td>
+
+  </tr>
+
+
+     <tr>
+
+      <td class="center" id="smash_task">
+
+
+        <i class="fa fa-circle-o fa-2x"></i>
+
+      </td>
+
+      <td class="task" id="task_content">Put them in your TASKSMASHR list.</td>
+
+
+      <td class="center">
+
+             <i class="fa fa-trash-o fa-2x"></i>
+
+      </td>
+
+     <td class="center">
+      <i class="fa fa-pencil-square fa-2x"></i>
+     </td>
+
+  </tr>
+
+   <tr>
+
+      <td class="center" id="smash_task">
+
+
+        <i class="fa fa-circle-o fa-2x"></i>
+
+      </td>
+
+      <td class="task" id="task_content">Smash your tasks step by step.</td>
+
+
+      <td class="center">
+
+             <i class="fa fa-trash-o fa-2x"></i>
+
+      </td>
+
+     <td class="center">
+      <i class="fa fa-pencil-square fa-2x"></i>
+     </td>
+
+  </tr>
+
+    <tr>
+
+      <td class="center" id="smash_task">
+
+
+        <i class="fa fa-circle-o fa-2x"></i>
+
+      </td>
+
+      <td class="task" id="task_content">Acomplish more by doing less.</td>
+
+
+      <td class="center">
+
+             <i class="fa fa-trash-o fa-2x"></i>
+
+      </td>
+
+     <td class="center">
+      <i class="fa fa-pencil-square fa-2x"></i>
+     </td>
+
+  </tr>
+
+
+
+
+
+      </table>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<h1><%= link_to "Create your account!", "#sign_up", :class => "fancybox" %></li></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
