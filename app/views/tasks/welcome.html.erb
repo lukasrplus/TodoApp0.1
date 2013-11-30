@@ -19,6 +19,11 @@
 
 $(document).ready(function() {
   $(".alert-danger").fadeOut(5000, "linear");
+  $(".fa-circle-o").click(function(){
+    $("#welcome_smash").slideDown(750, function(){
+      $(this).delay(300).effect('bounce', {times:30}, 2000).slideUp(1000);
+    });
+  });
 });
 
 
@@ -77,16 +82,29 @@ $(document).ready(function() {
 
 
 
+  <div class="row" id="welcome_smash" style="display:none">
 
-<!-- <div class="row" id="tagline">
 
-    <div class="col-md-4 col-md-offset-4">
+        <h1>SMASHED<i class="fa fa-gavel"></i></h1>
+        <h2>This is how we smash!</h2>
 
-        <button type="button" class="btn btn-success sign-up-button"><%= link_to "Click here to create your account!", "#sign_up", :class => "fancybox" %></button>
 
-    </div>
+  </div>
 
-</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <%= form_tag root_url, method: 'get' do %>
 
