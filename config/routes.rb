@@ -35,7 +35,7 @@ delete '/tasks/:id/archive' => 'tasks#archive', :as => "archive_task"
 
 get '/archivedtasks' => 'archivedtasks#index'
 
-get '/archivedtasks/:id/undo' => 'archivedtasks#undo', :as => "undo_archivedtask"
+delete '/archivedtasks/:id/undo' => 'archivedtasks#undo', :as => "undo_archivedtask"
 
 
 end

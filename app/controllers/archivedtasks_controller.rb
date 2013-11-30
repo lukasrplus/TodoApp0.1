@@ -7,6 +7,7 @@ end
 
 def undo
 
+
   archivedtask = Archivedtask.find_by(id: params[:id])
 
   new_task = Task.new
@@ -14,6 +15,7 @@ def undo
   new_task.content = archivedtask.content
   new_task.owner = archivedtask.owner
   new_task.important = archivedtask.important
+  new_task.user_id = archivedtask.user_id
 
   new_task.save
   archivedtask.destroy

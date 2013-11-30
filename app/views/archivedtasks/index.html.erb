@@ -1,30 +1,32 @@
 
 <% if session[:u_id].present? %>
 
-<h2>SMASHED TASKS</h2>
+<!-- <h4>Number of smashed tasks: <%= @archivedtasks.count %></h4> -->
 
-<h4>Number of smashed tasks: <%= @archivedtasks.count %></h4>
+<table class = "table borderless">
 
-<table class = "table table-bordered">
 
-<tr>
-<th></th>
-<th id="archivedtask_content">TASK</th>
-<!-- <th>OWNER</th>
-<th>IMPORTANT</th> -->
-</tr>
 
 
 <%  @archivedtasks.each do |a| %>
-<tr>
+
+<tr id="archivedtask_<%= a.id %>">
 
 
-<td class="center"><button type="button" class="btn btn-success btn-sm btn-block"><%= link_to "UNDO", undo_archivedtask_url(a.id) %></button></td>
+<td class="center" id="done_task">
+
+  <%= link_to '<i class="fa fa-check-circle-o fa-2x"></i>'.html_safe, undo_archivedtask_url(a.id), method: 'delete' %>
 
 
-<td><%= a.content %></td>
+<!--   <button type="button" class="btn btn-success btn-sm btn-block"><%= link_to "UNDO", undo_archivedtask_url(a.id) %></button> -->
+
+</td>
+
+
+<td class="task" id="done_content"><%= a.content %></td>
 <!-- <td><%= a.owner %></td>
 <td><%= a.important %></td> -->
+
 </tr>
 
 <% end %>

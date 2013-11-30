@@ -8,6 +8,14 @@ $(document).ready(function() {
   $(".alert-info").fadeOut(3000, "linear");
 });
 
+// $(document).ready(function() {
+//   $('.fa-circle-o').mouseenter(function() {
+//     $('.fa-circle-o').hide();
+//   });
+// });
+
+
+
 
 </script>
 
@@ -40,20 +48,19 @@ $(document).ready(function() {
       <td class="center" id="smash_task">
 
 
-       <!--  <button type="button" class="btn btn-success btn-sm btn-block"><%= link_to "SMASH", archive_task_url(task.id), method: :delete %></button> -->
         <%= link_to '<i class="fa fa-circle-o fa-2x"></i>'.html_safe, archive_task_url(task.id), method: :delete, remote: true, authenticity_token: true %>
 
       </td>
 
       <td class="task" id="task_content"><%= task.content %></td>
 
-    <!--   <td><%= task.owner %></td> -->
 
-      <td><%= task.important %></td>
+
+     <!--  <td><%= task.important %></td> -->
 
       <td class="center">
 
-  <!--  <button type="button" class="btn btn-danger btn-sm btn-block"><%= link_to "DELETE", task_url(task.id), method: 'delete' %></button> -->
+
 
              <%= link_to '<i class="fa fa-trash-o fa-2x"></i>'.html_safe, task_url(task.id), method: 'delete', remote: true, authenticity_token: true %>
 
